@@ -1,0 +1,31 @@
+<div class="container">
+<table class="table table-striped">
+	<thead>
+		<td>Problem Name</td>
+		<td>Problem Statement</td>
+	</thead>
+<% @all_user_problems.each do |problem|%>
+	<!--  <tr>
+		<td><%= link_to problem.name, problem_view_path(:id=>problem.id)%></td>
+		<td><%=problem.statement%></td>
+		<td><%= link_to "Edit", user_edit_path(:id=>problem.id),:class=>"btn btn-primary"%></td>
+	</tr> -->
+	 <tr>
+		<td> 
+			<a href="/problem/view/<%=problem.id%>" style="text-decoration:none ; color: #333333">			
+			<div style="height:100%;width:100%">
+     			<%=problem.name%>
+     		</div>
+     		</a>
+     	</td>
+		<td><a href="/problem/view/<%=problem.id%>" style="text-decoration:none ; color: #333333" >			
+			<div style="height:100%;width:100%">
+     			<%=problem.statement.at(0..30)%>
+     		</div>
+     		</a>
+     	</td>
+     	<td><%= link_to "Edit", user_edit_path(:id=>problem.id),:class=>"btn btn-primary"%></td>
+	</tr>
+<%end%>
+</table>
+</div>

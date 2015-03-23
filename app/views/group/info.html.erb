@@ -1,0 +1,31 @@
+
+<div class="container">
+<div class="well">
+	<div >
+    	<label class="col-sm-2 control-label">Group Name</label>
+    	<p><%= @group.name%></p><br/>	
+  	</div>
+  </div>
+ </div>
+
+<div class="container">
+<div class="well">
+	<div >
+    	<label class="col-sm-2 control-label">Number of Memebrs</label>
+    	<p><%= @group.no_of_members%></p>
+  	</div>
+  </div>
+ </div>
+
+
+  <br/>
+ 
+<% @group_users.each do |user| %> 
+ <div class="container">
+<div class="well">
+  <div >
+      <p><%= User.where(:id=>user.user_id).first.email %></p>
+    </div>
+  </div>
+ </div>
+<% end %>

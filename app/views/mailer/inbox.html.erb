@@ -1,0 +1,15 @@
+<div class="container">
+<table class="table table-striped">
+	<thead>
+		<td>Receiver name</td>
+		<td>Message</td>
+	</thead>
+<%@inbox.each do |inbox|%>
+	<tr>
+		<% name = User.where(:id=>inbox.sender_id).first.email %>
+		<td><b><%= name%></b></td>
+		<td><%=inbox.message%></td>
+	</tr>
+<%end%>
+</table>
+</div>

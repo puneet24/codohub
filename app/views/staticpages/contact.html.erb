@@ -1,0 +1,97 @@
+<link rel="stylesheet" id="js-hr-typography" type="text/css" href="/assets/contact/file1.css" data-noprefix />
+<link href="/assets/contact/file2.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/contact/file4.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/contact/file3.css" media="all" rel="stylesheet" type="text/css" />
+<div class="static-section static-hero x-hero">
+        <div class="container--flex">
+          <h2 class="static_hero-title text-inverse balance-text">Contact Us</h2>
+
+          <p class="static_hero-content balance-text">Have a question? Drop us a line; we are here to help.</p>
+
+          <div id="response-container" class="hidden" style="color: #ffffff">
+          </div>
+
+          <form name="contact-us-form">
+            <div class="formgroup row">
+              <div class="span-xs-16 span-lg-8">
+                <textarea id="contact-us-message" class="fw tall resizey" placeholder="Message"></textarea>
+              </div>
+              <div class="span-xs-16 span-lg-8 input-wrap">
+                <input name="fullName" id="fullName" type="text" placeholder="Full Name" class="fw"/>
+                <input name="email" id="email" type="email" placeholder="Email" class="fw"/>
+
+                <div class="btn-wrap">
+                  <button type='submit' class="btn btn-primary btn-large primary-dark">Send Email</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <section class="static-section text-center xcontact-email">
+        <div class="container--flex">
+          <h4 class="xcontact-emailink">Email: <a href="mailto:coders@codohub.com" class="btn-text color-green">coders@codohub.com</a>
+          </h4>
+        </div>
+      </section>
+       <section class="static-section xcontact-address fill-grey">
+        <div class="container--flex">
+          <div class="row">
+            <div class="span-xs-16 span-lg-8 xcontact-address-block">
+              <h3>United States <a href="tel:1-415-900-4023" class="btn-text color-green">1-415-900-402</a></h3>
+              <address>
+                215 Castro Street, 3rd Floor<br/>
+                Mountain View<br/>
+                California 94041
+              </address>
+            </div>
+            <div class="span-xs-16 span-lg-8 xcontact-address-block">
+              <h3>India <a href="tel:+91 8306689455" class="btn-text color-green">+91 8306689455</a></h3>
+              <address>
+                # 1002, Rushikesh Appartment<br>
+                Near Dinner Bell Hotel,<br>
+                Subhash Chowk, Memnagar <br>Ahmedabad<br>
+              </address>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="plT plB static-footer fill-dark">
+  <div class="container--flex">
+    <div class="row mlT mlB">
+      <div class="span-xs-16 span-lg-2ofthree x-footer-links">
+        <div class="row">
+          <!--<ul class="unstyled mlB span-xs-16 span-sm-8 span-md-4">
+              <li><p class="color-alt-grey mmB"><strong>Interviewstreet</strong></p></li>
+              <li><a href="https://www.interviewstreet.com/recruit2/howitworks/" target ="_blank">Features</a></li>
+              <li><a href="https://www.interviewstreet.com/recruit2/pricing/" target ="_blank">Pricing</a></li>
+              <li><a href="https://www.interviewstreet.com/recruit2/codepair" target ="_blank">Codepair</a></li>
+          </ul>-->
+          <ul class="unstyled mlB span-xs-16 span-sm-third">
+            <li><p class="color-alt-grey mmB"><strong>Company</strong></p></li>
+            <li><%=link_to "About Us",about_path()%></li>
+            <li><a href="interns/2014.html">Interns</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="http://blog.hackerrank.com/">Blog</a></li>
+          </ul>
+          <ul class="unstyled mlB span-xs-16 span-sm-third">
+            <li><p class="color-alt-grey mmB"><strong>Docs</strong></p></li>
+            <li><a href="scoring.html">Scoring</a></li>
+            <li><a href="environment.html">Environment</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+          <ul class="unstyled mlB span-xs-16 span-sm-third">
+            <li><p class="color-alt-grey mmB"><strong>Other</strong></p></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="http://webchat.freenode.net/?channels=hackerrank" target="_blank">Freenode</a></li>
+            <li><%=link_to "Contact Us",contact_path()%></li>
+          </ul>
+        </div>
+      </div>
+      <div class="span-xs-16 span-sm-16 span-lg-third x-footer-brand">
+        <p>&copy; 2014 CodoHub</p>
+        <p class="msT"><a href="https://www.facebook.com/hackerrank" target="_blank">Facebook</a> - <a href="https://twitter.com/hackerrank" target="_blank">Twitter</a></p>
+      </div>
+    </div>
+  </div>
+</div>

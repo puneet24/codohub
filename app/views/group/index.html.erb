@@ -1,0 +1,60 @@
+<style>
+.form-control{
+	width: 150;
+}
+</style>
+<br/><br/>
+<div class="container">
+<div class="well">
+<%= form_tag group_create_path(), :method => :get, :class => "form-horizontal" do %>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Group Name</label>
+    <div class="col-sm-6">
+      <input  name="name" class="form-control" placeholder="Group Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label  class="col-sm-2 control-label">Group Members</label>
+    <div class="col-sm-3">
+      <input type="text" id="members" name="no_of_members" style="width:40px" value="1" readonly="readonly" class="form-control" />
+        <img alt="Add_icon"  id="add" style="cursor:pointer;color:blue" height="20" src="/assets/add.png" width="20">
+        <img alt="Add_icon"  id="remove" style="cursor:pointer;color:blue" height="20" src="/assets/minus2.png" width="20">
+        <div id="group-members">
+        <input type="text" name="user_1" class="form-control" value="<%= current_user.email%>" disabled></input>
+        </div>
+
+    </div>
+
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-primary">Add Group</button>
+    </div>
+  </div>
+<%end%>
+</div>
+</div>
+
+<script>
+function add_row(i)
+{
+  var row="";
+  row = '<input type="text" name="user_'+i+'" class="form-control" placeholder="Email"></input>';
+  $('div#group-members').append(row);
+
+}
+</script>
+
+<script>
+$("img#add").on('click',function(){
+    no_of_members = parseInt($('#members').val());
+    $('#members').val( no_of_members + 1);
+    add_row(no_of_members+1);
+});
+$("img#remove").on('click',function(){
+    remove_member = parseInt($('#members').val());
+    if(remove_member>=2){
+    $('#members').val( remove_member - 1);
+    $('#group-members input:last-child').remove();}
+});
+</script>

@@ -1,0 +1,46 @@
+<style>
+#circle
+{
+  border-radius:50% 50% 50% 50%;  
+  width:150px;
+  height:150px;
+}
+</style>
+<center>
+<!-- header -->
+<div style="font-size:30px;">
+<b>One account. All of Codohub.</b></div><br/>
+</div>
+<div style="font-size:22px;">
+Sign in to continue with Codohub.
+</div><br/>
+<div class="row">
+<div class="col-md-4"></div>
+<div class='col-md-4' style="padding-left: 50px; padding-right: 50px;">
+<div class="well">
+<img id="circle" class="profile-img" src="/assets/user.png" alt=""><br/><br/>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group">
+    <input autofocus="autofocus" autocomplete="on" class="form-control" id="user_email" name="user[email]" type="email" value>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, autocomplete: "off",:class=>'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Log in",:class=>'form-control btn btn-primary' %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+      <%= f.check_box :remember_me%>&nbsp;Remember Me
+  <% end -%>
+  
+<% end %>
+
+</div>
+</div>
+<div class='col-md-4'></div>
+</div>
+<div><%=link_to "Create new account", new_user_registration_path %></div>
+</center>

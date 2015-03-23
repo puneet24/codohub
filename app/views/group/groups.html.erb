@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table table-striped">
+	<thead>
+		<td>Group Name</td>
+		<td>Group members</td>
+	</thead>
+<%@all_groups.each do |group|%>
+	 <tr>
+		<td> 
+			<a href="info/<%= group.id%>" style="text-decoration:none ; color: #333333">			
+			<div style="height:100%;width:100%">
+     			<%= group.name%>
+     		</div>
+     		</a>
+     	</td>
+		<td><a href="" style="text-decoration:none ; color: #333333" >			
+			<div style="height:100%;width:100%">
+     			<%=group.no_of_members%>
+     		</div>
+     		</a>
+     	</td>
+	</tr>
+<%end%>
+</table>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+<table class="table table-striped">
+	<thead>
+		<td>Sender name</td>
+		<td>Message</td>
+	</thead>
+<%@sent_mails.each do |sent_mails|%>
+	<tr>
+		<% name = User.where(:id=>sent_mails.receiver_id).first %>
+		<td><b><a href="<%=history_path(sent_mails.ticket_id)%>"><%= name.email%></a></b></td>
+		<td><%=sent_mails.message%></td>
+	</tr>
+<%end%>
+</table>
+</div>

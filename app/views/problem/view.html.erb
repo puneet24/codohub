@@ -1,0 +1,51 @@
+
+<div class="container">
+<div class="well">
+	<div >
+    	<label class="col-sm-2 control-label">Title</label>
+    	<p><%= @problem.name%></p><br/>	
+  	</div>
+  </div>
+ </div>
+
+<div class="container">
+<div class="well">
+	<div >
+    	<label class="col-sm-2 control-label">Statement</label>
+    	<p><%= @problem.statement%></p>
+  	</div>
+  </div>
+ </div>
+
+
+  <br/>
+  <br/>
+<div class="container">
+      <label class="col-sm-2 control-label">Comments</label>
+ </div>
+<% @comments.each do |comment| %> 
+ <div class="container">
+<div class="well">
+  <div >
+      <label class="col-sm-2 control-label"><%= comment.user_id %></label>
+      <p><%= comment.comment %></p>
+    </div>
+  </div>
+ </div>
+<% end %>
+
+ <% if !current_user.nil? %>
+  <%= form_tag problem_add_comment_path(:id => @problem.id), :method => :get, :class => "form-horizontal" do %>
+  <div class="form-group">
+    <label class="col-sm-2 control-label"><%=current_user.id%></label>
+    <div class="col-sm-6">
+      <textarea class="form-control" name="comment_body"  rows="3" placeholder="Add Comment"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+      <button type="submit" class="btn btn-primary">Add Comment</button>
+    </div>
+  </div>
+<%end%>
+<%end%>

@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table table-striped">
+	<thead>
+		<td>Problem Name</td>
+		<td>Problem Statement</td>
+	</thead>
+<%@problem.each do |problem|%>
+	 <tr>
+		<td> 
+			<a href="view/<%=problem.id%>" style="text-decoration:none ; color: #333333">			
+			<div style="height:100%;width:100%">
+     			<%=problem.name%>
+     		</div>
+     		</a>
+     	</td>
+		<td><a href="view/<%=problem.id%>" style="text-decoration:none ; color: #333333" >			
+			<div style="height:100%;width:100%">
+     			<%=problem.statement.at(0..30)%>
+     		</div>
+     		</a>
+     	</td>
+	</tr>
+<%end%>
+</table>
+</div>
